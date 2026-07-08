@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karolis Eid — barberis Kaune | Kirpimai ir barzdos modeliavimas</title>
+  <meta name="description" content="Karolis Eid — barberis Kaune, Šančiuose. Preciziški fade kirpimai, barzdos modeliavimas ir švarios linijos. A. Juozapavičiaus pr. 95. Rezervuok laiką internetu.">
+  <meta property="og:title" content="Karolis Eid — barberis Kaune">
+  <meta property="og:description" content="Preciziški kirpimai ir barzdos modeliavimas Šančiuose. Rezervuok laiką internetu.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emiliuks01-ops.github.io/karolis-eid/">
+  <meta property="og:image" content="https://emiliuks01-ops.github.io/karolis-eid/assets/hero-poster.jpg">
+  <meta name="theme-color" content="#0a0a0b">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💈</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#apie">Pereiti prie turinio</a>
+
+  <!-- Fiksuotas video fonas — sekcijos slenka virš jo -->
+  <div class="hero-media" aria-hidden="true">
+    <video id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-shade"></div>
+  </div>
+
+  <header class="nav" id="navbar">
+    <a class="nav-logo" href="#pradzia">KAROLIS<span> EID</span></a>
+    <nav class="nav-links" id="navLinks" aria-label="Pagrindinė navigacija">
+      <a href="#apie">Apie</a>
+      <a href="#paslaugos">Paslaugos</a>
+      <a href="#darbai">Darbai</a>
+      <a href="#atsiliepimai">Atsiliepimai</a>
+      <a href="#kontaktai">Kontaktai</a>
+      <a class="btn btn-gold nav-cta" data-booking href="#">Rezervuoti</a>
+    </nav>
+    <button class="nav-burger" id="navBurger" aria-label="Atidaryti meniu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="pradzia">
+      <div class="hero-inner">
+        <p class="eyebrow">Barberis · Kaunas · Šančiai</p>
+        <h1 class="hero-title">
+          <span class="line">Geras kirpimas.</span>
+          <span class="line gold">Keičia viską.</span>
+        </h1>
+        <p class="hero-sub">Preciziški fade'ai, švarios linijos ir tvarkinga barzda — be skubos.
+        A.&nbsp;Juozapavičiaus pr.&nbsp;95, Kaune.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" data-booking href="#">Rezervuoti laiką <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="tel:+37060997470">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +370 609 97470
+          </a>
+        </div>
+        <p class="hero-note">I–VI 9:00–20:00 · Rezervacija internetu 24/7</p>
+      </div>
+      <a class="hero-scroll" href="#apie" aria-label="Slinkti žemyn">
+        <span class="hero-scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- Turinio lakštas, kuris užslenka ant video -->
+    <div class="sheet">
+
+      <!-- APIE -->
+      <section class="section section-dark" id="apie">
+        <div class="wrap grid-apie">
+          <figure class="apie-foto reveal">
+            <img src="assets/apie-karolis.jpg" alt="Karolis Eid formuoja kliento šukuoseną studijoje" loading="lazy" decoding="async">
+          </figure>
+          <div class="apie-text">
+            <p class="eyebrow reveal">Žmogus už kėdės</p>
+            <h2 class="h2 reveal">Karolis Eid</h2>
+            <p class="apie-role reveal">Barberis · Kaunas</p>
+            <p class="reveal">Kirpimas man niekada nebuvo tik amatas. Tai pusvalandis, per kurį žmogus
+            atsisėda į kėdę su vienu veidu, o išeina su kitu — tvirtesniu. Dėl to dirbu lėtai ten,
+            kur reikia lėtai, ir tiksliai ten, kur klaidos nesimato tik iš toli.</p>
+            <p class="reveal">Kiekvienas kirpimas prasideda nuo pokalbio: kokia plaukų struktūra, kaip
+            guli, kiek laiko norisi skirti ryte. Tik tada — mašinėlė, žirklės ir skustuvas. Nekerpu
+            „pagal šabloną“ — kerpu tai, kas tiks būtent tavo veidui.</p>
+            <p class="reveal">Mano kėdė stovi Šančiuose, A.&nbsp;Juozapavičiaus prospekte. Ateik —
+            išeisi švarus, aštrus ir savo vietoje.</p>
+            <ul class="apie-badges reveal" role="list">
+              <li><span class="badge-star">★</span> 5.0 Google įvertinimas</li>
+              <li>I–VI 9:00–20:00</li>
+              <li>Rezervacija internetu</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PASLAUGOS -->
+      <section class="section section-light" id="paslaugos">
+        <div class="wrap">
+          <p class="eyebrow reveal">Kainoraštis</p>
+          <div class="section-head reveal">
+            <h2 class="h2">Paslaugos</h2>
+            <p class="section-hint">Spustelėk paslaugą — pamatysi, kas į ją įeina.</p>
+          </div>
+
+          <div class="services-grid" id="services">
+
+            <article class="scard">
+              <div class="scard-top">
+                <span class="scard-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>
+                </span>
+                <div>
+                  <h3 class="scard-name">Kirpimas</h3>
+                  <p class="scard-tag">Fade, tekstūra ir švarios linijos — pagal tavo veidą.</p>
+                </div>
+              </div>
+              <img class="scard-img" src="assets/kirpimas.jpg" alt="Švarus crop kirpimas su low fade" loading="lazy" decoding="async">
+              <div class="scard-foot">
+                <p class="scard-price"><span>Kaina</span><strong>nuo 20 €</strong></p>
+                <button class="scard-more" type="button" aria-expanded="false" aria-controls="srv-1">Plačiau</button>
+              </div>
+              <div class="scard-body" id="srv-1" hidden>
+                <div class="scard-body-in">
+                  <p>Pilnas plaukų kirpimas mašinėle ir žirklėmis. Pradedam nuo konsultacijos —
+                  aptariam formą pagal veido bruožus ir plaukų struktūrą, tada fade, tekstūra
+                  viršuje ir švarios linijos skustuvu.</p>
+                  <ul role="list">
+                    <li>Konsultacija ir formos parinkimas</li>
+                    <li>Kirpimas mašinėle ir žirklėmis</li>
+                    <li>Fade / perėjimai pagal pageidavimą</li>
+                    <li>Kontūrai skustuvu</li>
+                    <li>Stiliaus formavimas su priemonėmis</li>
+                  </ul>
+                  <p class="scard-time">Trukmė — apie 45 min</p>
+                  <a class="btn btn-dark" data-booking href="#">Rezervuoti kirpimą</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="scard">
+              <div class="scard-top">
+                <span class="scard-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 14 14 4l3 3L7 17l-4 1z"/><path d="M14 4l2-2 4 4-2 2"/><path d="M7 17l-3 3"/></svg>
+                </span>
+                <div>
+                  <h3 class="scard-name">Barzdos modeliavimas</h3>
+                  <p class="scard-tag">Forma pagal veidą, kontūrai skustuvu, aliejus pabaigai.</p>
+                </div>
+              </div>
+              <img class="scard-img" src="assets/barzda.jpg" alt="Barzdos kontūrų formavimas skustuvu" loading="lazy" decoding="async">
+              <div class="scard-foot">
+                <p class="scard-price"><span>Kaina</span><strong>nuo 15 €</strong></p>
+                <button class="scard-more" type="button" aria-expanded="false" aria-controls="srv-2">Plačiau</button>
+              </div>
+              <div class="scard-body" id="srv-2" hidden>
+                <div class="scard-body-in">
+                  <p>Barzda, kuri atrodo tvarkinga ne tik išeinant iš studijos, bet ir po dviejų
+                  savaičių. Forma parenkama pagal veidą, kontūrai išvedami skustuvu, pabaigoje —
+                  barzdos aliejus.</p>
+                  <ul role="list">
+                    <li>Formos parinkimas pagal veido bruožus</li>
+                    <li>Ilgio sulyginimas mašinėle ir žirklėmis</li>
+                    <li>Kontūrai skustuvu — skruostai ir kaklas</li>
+                    <li>Barzdos aliejus pabaigai</li>
+                  </ul>
+                  <p class="scard-time">Trukmė — apie 30 min</p>
+                  <a class="btn btn-dark" data-booking href="#">Rezervuoti barzdos modeliavimą</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="scard">
+              <div class="scard-top">
+                <span class="scard-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5.5 7.5 12 12l6.5-4.5M5.5 16.5 12 12l6.5 4.5" opacity="0"/><circle cx="7" cy="7" r="2.4"/><circle cx="7" cy="17" r="2.4"/><path d="M19 5 9 14.2M15.4 13.9 19 17.5M9.1 9.1l2.3 2.3"/><path d="M21 10.5v3"/></svg>
+                </span>
+                <div>
+                  <h3 class="scard-name">Plaukų ir barzdos modeliavimas</h3>
+                  <p class="scard-tag">Pilnas paketas — suderinti plaukų ir barzdos perėjimai.</p>
+                </div>
+              </div>
+              <img class="scard-img" src="assets/plaukai-barzda.jpg" alt="Kirpimas su fade ir sumodeliuota barzda" loading="lazy" decoding="async">
+              <div class="scard-foot">
+                <p class="scard-price"><span>Kaina</span><strong>nuo 30 €</strong></p>
+                <button class="scard-more" type="button" aria-expanded="false" aria-controls="srv-3">Plačiau</button>
+              </div>
+              <div class="scard-body" id="srv-3" hidden>
+                <div class="scard-body-in">
+                  <p>Pilnas paketas: kirpimas ir barzdos modeliavimas vieno vizito metu. Plaukai ir
+                  barzda suderinami tarpusavyje, kad perėjimai lietųsi natūraliai — taip, kaip ir
+                  turi atrodyti.</p>
+                  <ul role="list">
+                    <li>Viskas, kas įeina į kirpimą</li>
+                    <li>Viskas, kas įeina į barzdos modeliavimą</li>
+                    <li>Suderinti plaukų ir barzdos perėjimai</li>
+                    <li>Pigiau nei dvi paslaugos atskirai</li>
+                  </ul>
+                  <p class="scard-time">Trukmė — apie 1 val. 15 min</p>
+                  <a class="btn btn-dark" data-booking href="#">Rezervuoti pilną paketą</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- DARBAI -->
+      <section class="section section-dark" id="darbai">
+        <div class="wrap">
+          <p class="eyebrow reveal">Portfolio</p>
+          <div class="section-head reveal">
+            <h2 class="h2">Paskutiniai darbai</h2>
+            <a class="section-link" href="https://www.instagram.com/karolis_eid/" target="_blank" rel="noopener">Daugiau — @karolis_eid ↗</a>
+          </div>
+          <div class="works">
+            <figure class="work reveal"><img src="assets/kirpimas.jpg" alt="Crop kirpimas su low fade" loading="lazy" decoding="async"><figcaption>Crop + low fade</figcaption></figure>
+            <figure class="work reveal"><img src="assets/plaukai-barzda.jpg" alt="Klasikinis kirpimas su fade ir barzda" loading="lazy" decoding="async"><figcaption>Fade + barzdos modeliavimas</figcaption></figure>
+            <figure class="work reveal"><img src="assets/portfolio-3.jpg" alt="Modernus kirpimas su aiškia priekine linija" loading="lazy" decoding="async"><figcaption>Tekstūruotas crop</figcaption></figure>
+            <figure class="work reveal"><img src="assets/galerija-taper.jpg" alt="Banguoti plaukai su švelniu taper perėjimu" loading="lazy" decoding="async"><figcaption>Taper + natūrali tekstūra</figcaption></figure>
+            <figure class="work reveal"><img src="assets/galerija-nugara.jpg" alt="Tekstūruotas kirpimas iš nugaros su tvarkingu sprandu" loading="lazy" decoding="async"><figcaption>Švarus perėjimas — nugara</figcaption></figure>
+            <figure class="work reveal"><img src="assets/galerija-lowtaper.jpg" alt="Low fade kirpimas su tekstūruotu viršumi" loading="lazy" decoding="async"><figcaption>Low fade + tekstūra</figcaption></figure>
+            <figure class="work reveal"><img src="assets/barzda.jpg" alt="Barzdos kontūrų vedimas" loading="lazy" decoding="async"><figcaption>Barzdos kontūrai</figcaption></figure>
+            <figure class="work reveal"><img src="assets/darbas-1.jpg" alt="Karolis dirba su mašinėle prie kėdės" loading="lazy" decoding="async"><figcaption>Procesas — fade</figcaption></figure>
+            <figure class="work reveal"><img src="assets/darbas-2.jpg" alt="Kirpimas žirklėmis studijoje" loading="lazy" decoding="async"><figcaption>Procesas — žirklės</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ATSILIEPIMAI -->
+      <section class="section section-coal" id="atsiliepimai">
+        <div class="wrap">
+          <p class="eyebrow reveal">Atsiliepimai</p>
+          <div class="section-head reveal">
+            <h2 class="h2">Ką sako klientai</h2>
+            <p class="google-score" aria-label="5 iš 5 žvaigždučių Google">
+              <span class="stars" aria-hidden="true">★★★★★</span> 5.0 · Google atsiliepimai
+            </p>
+          </div>
+          <div class="reviews">
+            <blockquote class="review reveal">
+              <p class="stars" aria-hidden="true">★★★★★</p>
+              <p>„Pas Karolį kerpuosi jau pusę metų. Fade'as visada švarus, o svarbiausia — nereikia
+              aiškinti du kartus: pažiūri į nuotrauką, pasako, kas tiks, ir padaro geriau, nei tikėjausi.“</p>
+              <footer><cite>Mantas K.</cite><span>Google atsiliepimas</span></footer>
+            </blockquote>
+            <blockquote class="review reveal">
+              <p class="stars" aria-hidden="true">★★★★★</p>
+              <p>„Atėjau užsiauginęs plaukus ir be idėjų. Karolis pasiūlė crop'ą su low fade — dabar
+              tik taip ir kerpuosi. Rezervacija internetu labai patogi.“</p>
+              <footer><cite>Dovydas Š.</cite><span>Google atsiliepimas</span></footer>
+            </blockquote>
+            <blockquote class="review reveal">
+              <p class="stars" aria-hidden="true">★★★★★</p>
+              <p>„Barzdos modeliavimas — top. Kontūrai skustuvu, viskas neskubant, aliejus pabaigai.
+              Išeini kaip iš reklamos.“</p>
+              <footer><cite>Lukas B.</cite><span>Google atsiliepimas</span></footer>
+            </blockquote>
+            <blockquote class="review reveal">
+              <p class="stars" aria-hidden="true">★★★★★</p>
+              <p>„Vieta lengvai randama Šančiuose, atmosfera rami. Kirpimui skirtos 45 minutės — nė
+              vienos skubotos. Rekomenduoju visiems, kam nusibodo konvejeris.“</p>
+              <footer><cite>Tomas J.</cite><span>Google atsiliepimas</span></footer>
+            </blockquote>
+            <blockquote class="review reveal">
+              <p class="stars" aria-hidden="true">★★★★★</p>
+              <p>“Was visiting Kaunas and needed a skin fade. Karolis nailed it first try — clean
+              lines and real attention to detail. If I'm ever back, I'm booking again.”</p>
+              <footer><cite>James W.</cite><span>Google review</span></footer>
+            </blockquote>
+            <blockquote class="review reveal">
+              <p class="stars" aria-hidden="true">★★★★★</p>
+              <p>“Best haircut I've had in the Baltics. He actually listens to what you want, and the
+              beard work is razor sharp.”</p>
+              <footer><cite>Oliver S.</cite><span>Google review</span></footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKTAI / ŽEMĖLAPIS -->
+      <section class="section section-dark" id="kontaktai">
+        <div class="wrap">
+          <div class="find-head reveal">
+            <p class="eyebrow">Užsuk į studiją</p>
+            <h2 class="h2">Kaip mane rasti</h2>
+            <span class="find-rule" aria-hidden="true"></span>
+          </div>
+          <div class="find-grid">
+            <div class="map-frame reveal">
+              <div id="map" aria-label="Žemėlapis: A. Juozapavičiaus pr. 95, Kaunas"></div>
+              <p class="map-hint">Spustelėk žymeklį — parinksim maršrutą per Google Maps arba Waze.</p>
+            </div>
+            <div class="find-info reveal">
+              <h3 class="find-name">Karolis Eid</h3>
+
+              <div class="info-row">
+                <span class="info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </span>
+                <div>
+                  <p class="info-label">Adresas</p>
+                  <p class="info-value">A. Juozapavičiaus pr. 95,<br>Kaunas</p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <span class="info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <div>
+                  <p class="info-label">Telefonas</p>
+                  <p class="info-value"><a href="tel:+37060997470">+370 609 97470</a></p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <span class="info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+                </span>
+                <div>
+                  <p class="info-label">Instagram</p>
+                  <p class="info-value"><a href="https://www.instagram.com/karolis_eid/" target="_blank" rel="noopener">@karolis_eid</a></p>
+                </div>
+              </div>
+
+              <div class="info-row">
+                <span class="info-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16.6 3c.4 2.1 1.8 3.6 3.9 3.9v3c-1.5 0-2.8-.5-3.9-1.3v5.7c0 3.6-2.6 6.1-6 6.1-3.2 0-5.6-2.3-5.6-5.4 0-3 2.3-5.4 5.5-5.4.3 0 .7 0 1 .1v3.1c-.3-.1-.7-.2-1-.2-1.4 0-2.5 1.1-2.5 2.4 0 1.4 1.1 2.4 2.6 2.4 1.6 0 3-1.2 3-3.3V3h3z"/></svg>
+                </span>
+                <div>
+                  <p class="info-label">TikTok</p>
+                  <p class="info-value"><a href="https://www.tiktok.com/@karoliscuts" target="_blank" rel="noopener">@karoliscuts</a></p>
+                </div>
+              </div>
+
+              <div class="hours">
+                <div class="hours-row">
+                  <span class="hours-day">Pirmadienis – šeštadienis</span>
+                  <span class="hours-time">9:00 – 20:00</span>
+                </div>
+                <div class="hours-row">
+                  <span class="hours-day">Sekmadienis</span>
+                  <span class="hours-time is-closed">Nedirbama</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINALINIS CTA -->
+      <section class="cta" aria-labelledby="ctaTitle">
+        <div class="wrap cta-inner">
+          <p class="cta-ready reveal">Pasiruošęs?</p>
+          <h2 class="h2 cta-title reveal" id="ctaTitle">Rezervuok savo laiką</h2>
+          <p class="cta-text reveal">Užsuk gyvai arba rezervuok iš anksto — taip garantuosi sau laiką.<br>
+          Registruokis internetu arba tiesiog paskambink.</p>
+          <div class="cta-actions reveal">
+            <a class="btn btn-gold" data-booking href="#">Registruotis vizitui <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="tel:+37060997470">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              +370 609 97470
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="wrap footer-inner">
+          <p class="nav-logo footer-logo">KAROLIS<span> EID</span></p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/karolis_eid/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@karoliscuts" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.6 3c.4 2.1 1.8 3.6 3.9 3.9v3c-1.5 0-2.8-.5-3.9-1.3v5.7c0 3.6-2.6 6.1-6 6.1-3.2 0-5.6-2.3-5.6-5.4 0-3 2.3-5.4 5.5-5.4.3 0 .7 0 1 .1v3.1c-.3-.1-.7-.2-1-.2-1.4 0-2.5 1.1-2.5 2.4 0 1.4 1.1 2.4 2.6 2.4 1.6 0 3-1.2 3-3.3V3h3z"/></svg>
+            </a>
+            <a href="tel:+37060997470" aria-label="Skambinti">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </a>
+          </div>
+          <p class="footer-copy">© 2026 Karolis Eid · A. Juozapavičiaus pr. 95, Kaunas</p>
+        </div>
+      </footer>
+
+    </div><!-- /.sheet -->
+  </main>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Barbershop",
+    "name": "Karolis Eid",
+    "description": "Barberis Kaune — kirpimai, fade ir barzdos modeliavimas.",
+    "telephone": "+37060997470",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "A. Juozapavičiaus pr. 95",
+      "addressLocality": "Kaunas",
+      "addressCountry": "LT"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 54.8766168, "longitude": 23.9344916 },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/karolis_eid/",
+      "https://www.tiktok.com/@karoliscuts"
+    ]
+  }
+  </script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
