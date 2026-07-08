@@ -304,11 +304,12 @@ a { color: inherit; }
 
 /* ---------- Turinio lakštas ---------- */
 
+/* Lakštas permatomas — sekcijos pačios dengia fiksuotą video,
+   o .section-video jį rodo pro pritemdymą */
 .sheet {
   position: relative;
   z-index: 2;
   border-top: 2px solid var(--gold);
-  background: var(--ink);
 }
 
 .section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
@@ -317,12 +318,10 @@ a { color: inherit; }
 
 .section-coal { background: var(--coal); color: var(--bone); }
 
-.section-light {
-  background: var(--bone);
-  color: var(--ink);
+.section-video {
+  background: rgba(10, 10, 11, 0.8);
+  color: var(--bone);
 }
-
-.section-light .eyebrow { color: var(--gold-text); }
 
 .wrap {
   max-width: var(--wrap);
@@ -354,8 +353,6 @@ a { color: inherit; }
   letter-spacing: 0.06em;
   color: var(--smoke);
 }
-
-.section-light .section-hint { color: rgba(10, 10, 11, 0.6); }
 
 .section-link {
   font-family: var(--mono);
@@ -447,12 +444,13 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   background: #f3f0ea;
+  color: var(--ink);
   border: 1px solid var(--line-light);
   padding: 1.4rem;
   transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
-.scard:hover { border-color: rgba(10, 10, 11, 0.35); }
+.scard:hover { border-color: var(--gold); }
 
 .scard-top {
   display: flex;
