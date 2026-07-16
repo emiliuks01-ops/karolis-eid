@@ -138,7 +138,7 @@ if (typeof L !== "undefined" && document.getElementById("map")) {
     dragging: !L.Browser.mobile,
   });
 
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
     subdomains: "abcd",
@@ -149,7 +149,7 @@ if (typeof L !== "undefined" && document.getElementById("map")) {
     className: "",
     html:
       '<div class="ke-pin" title="Karolis Eid — barberis">' +
-      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0a0b" stroke-width="2.4">' +
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16302b" stroke-width="2.4">' +
       '<circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>' +
       '<path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg></div>',
     iconSize: [38, 38],

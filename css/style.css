@@ -1,21 +1,24 @@
 /* ============================================================
    KAROLIS EID — barberis Kaune
-   Paletė:  ink #0A0A0B · coal #131315 · bone #EAE6DE
-            smoke #A8A29A · gold #C6A15B
+   Paletė:  midnight #16302B · cream #EDE3DE · camel #A38560
+   (pagal kliento Pinterest paletę: knit sweater / midnight / camel coat)
    Šriftai: Big Shoulders Display / Work Sans / Spline Sans Mono
    ============================================================ */
 
 :root {
-  --ink: #0a0a0b;
-  --coal: #131315;
-  --bone: #eae6de;
-  --bone-deep: #dcd7cc;
+  --ink: #16302b;
+  --coal: #1d3b34;
+  --bone: #ede3de;
+  --bone-deep: #e0d2ca;
+  --card: #f6efea;
   --smoke: #a8a29a;
-  --gold: #c6a15b;
-  --gold-deep: #a9843e;
-  --gold-text: #6f5522; /* AA kontrastas ant šviesaus fono */
-  --line-dark: rgba(255, 255, 255, 0.12);
-  --line-light: rgba(10, 10, 11, 0.14);
+  --ink-soft: rgba(22, 48, 43, 0.66);
+  --ink-body: rgba(22, 48, 43, 0.84);
+  --gold: #ab8d68;
+  --gold-deep: #8a6c47;
+  --gold-text: #6b5335; /* AA kontrastas ant šviesaus fono */
+  --line-dark: rgba(237, 227, 222, 0.16);
+  --line-light: rgba(22, 48, 43, 0.16);
   --display: "Big Shoulders Display", "Arial Narrow", sans-serif;
   --body: "Work Sans", system-ui, sans-serif;
   --mono: "Spline Sans Mono", ui-monospace, monospace;
@@ -85,8 +88,8 @@ a { color: inherit; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(10,10,11,.62) 0%, rgba(10,10,11,.38) 45%, rgba(10,10,11,.72) 100%),
-    radial-gradient(90% 70% at 30% 55%, rgba(10,10,11,.35), transparent 70%);
+    linear-gradient(180deg, rgba(13,29,25,.66) 0%, rgba(13,29,25,.42) 45%, rgba(13,29,25,.76) 100%),
+    radial-gradient(90% 70% at 30% 55%, rgba(13,29,25,.38), transparent 70%);
 }
 
 /* ---------- Navigacija ---------- */
@@ -104,7 +107,7 @@ a { color: inherit; }
 }
 
 .nav.is-solid {
-  background: rgba(10, 10, 11, 0.92);
+  background: rgba(19, 41, 36, 0.94);
   box-shadow: 0 1px 0 var(--line-dark);
   backdrop-filter: blur(8px);
 }
@@ -201,9 +204,9 @@ a { color: inherit; }
 .btn-gold:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
 
 .btn-ghost {
-  background: rgba(10, 10, 11, 0.25);
+  background: rgba(13, 29, 25, 0.25);
   color: var(--bone);
-  border-color: rgba(234, 230, 222, 0.45);
+  border-color: rgba(237, 227, 222, 0.45);
 }
 
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
@@ -259,7 +262,7 @@ a { color: inherit; }
 .hero-sub {
   max-width: 34rem;
   font-size: clamp(1rem, 1.4vw, 1.125rem);
-  color: rgba(234, 230, 222, 0.88);
+  color: rgba(237, 227, 222, 0.9);
   margin-bottom: 2rem;
 }
 
@@ -319,9 +322,19 @@ a { color: inherit; }
 .section-coal { background: var(--coal); color: var(--bone); }
 
 .section-video {
-  background: rgba(10, 10, 11, 0.8);
+  background: rgba(13, 29, 25, 0.84);
   color: var(--bone);
 }
+
+.section-light { background: var(--bone); color: var(--ink); }
+
+.section-light .eyebrow { color: var(--gold-text); }
+
+.section-light .section-hint { color: var(--ink-soft); }
+
+.section-light .section-link { color: var(--gold-text); }
+
+.section-light .section-link:hover { border-bottom-color: var(--gold-text); }
 
 .wrap {
   max-width: var(--wrap);
@@ -401,12 +414,12 @@ a { color: inherit; }
   font-size: 0.85rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-text);
   margin-bottom: 1.4rem;
 }
 
 .apie-text p:not(.eyebrow):not(.apie-role) {
-  color: rgba(234, 230, 222, 0.82);
+  color: var(--ink-body);
   margin-bottom: 1rem;
   max-width: 38rem;
 }
@@ -425,11 +438,11 @@ a { color: inherit; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0.5rem 0.9rem;
-  border: 1px solid var(--line-dark);
-  color: var(--smoke);
+  border: 1px solid var(--line-light);
+  color: var(--ink-soft);
 }
 
-.badge-star { color: var(--gold); }
+.badge-star { color: var(--gold-text); }
 
 /* ---------- Paslaugos (kortelės) ---------- */
 
@@ -443,7 +456,7 @@ a { color: inherit; }
 .scard {
   display: flex;
   flex-direction: column;
-  background: #f3f0ea;
+  background: var(--card);
   color: var(--ink);
   border: 1px solid var(--line-light);
   padding: 1.4rem;
@@ -487,7 +500,7 @@ a { color: inherit; }
 
 .scard-tag {
   font-size: 0.9rem;
-  color: rgba(10, 10, 11, 0.68);
+  color: rgba(22, 48, 43, 0.72);
   line-height: 1.45;
 }
 
@@ -511,7 +524,7 @@ a { color: inherit; }
   font-size: 0.7rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(10, 10, 11, 0.55);
+  color: rgba(22, 48, 43, 0.6);
   margin-bottom: 0.15rem;
 }
 
@@ -555,7 +568,7 @@ a { color: inherit; }
 }
 
 .scard-body-in p {
-  color: rgba(10, 10, 11, 0.78);
+  color: var(--ink-body);
   font-size: 0.94rem;
   margin-bottom: 1rem;
 }
@@ -570,7 +583,7 @@ a { color: inherit; }
   padding-left: 1.4rem;
   margin-bottom: 0.35rem;
   font-size: 0.94rem;
-  color: rgba(10, 10, 11, 0.78);
+  color: var(--ink-body);
 }
 
 .scard-body-in li::before {
@@ -585,7 +598,7 @@ a { color: inherit; }
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(10, 10, 11, 0.6);
+  color: rgba(22, 48, 43, 0.62);
 }
 
 .scard .btn { justify-content: center; width: 100%; }
@@ -622,7 +635,7 @@ a { color: inherit; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--bone);
-  background: linear-gradient(180deg, transparent, rgba(10, 10, 11, 0.85));
+  background: linear-gradient(180deg, transparent, rgba(13, 29, 25, 0.88));
 }
 
 /* ---------- Atsiliepimai ---------- */
@@ -651,12 +664,12 @@ a { color: inherit; }
   gap: 0.9rem;
   padding: 1.6rem 1.5rem;
   border: 1px solid var(--line-dark);
-  background: rgba(10, 10, 11, 0.35);
+  background: rgba(13, 29, 25, 0.4);
 }
 
 .review > p:not(.stars) {
   font-size: 0.95rem;
-  color: rgba(234, 230, 222, 0.85);
+  color: rgba(237, 227, 222, 0.87);
   flex-grow: 1;
 }
 
@@ -707,20 +720,20 @@ a { color: inherit; }
   align-items: start;
 }
 
-.map-frame { border: 1px solid var(--line-dark); }
+.map-frame { border: 1px solid var(--line-light); background: var(--card); }
 
 #map {
   height: clamp(320px, 46vh, 440px);
-  background: var(--coal);
+  background: var(--bone-deep);
 }
 
 .map-hint {
   font-family: var(--mono);
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  color: var(--smoke);
+  color: var(--ink-soft);
   padding: 0.7rem 0.9rem;
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line-light);
 }
 
 .find-name {
@@ -744,9 +757,9 @@ a { color: inherit; }
   flex-shrink: 0;
   width: 34px;
   height: 34px;
-  border: 1px solid var(--line-dark);
+  border: 1px solid var(--line-light);
   border-radius: 50%;
-  color: var(--gold);
+  color: var(--gold-text);
 }
 
 .info-label {
@@ -754,26 +767,26 @@ a { color: inherit; }
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--smoke);
+  color: var(--ink-soft);
   margin-bottom: 0.2rem;
 }
 
 .info-value {
-  color: rgba(234, 230, 222, 0.9);
+  color: var(--ink-body);
   line-height: 1.5;
 }
 
 .info-value a {
-  color: var(--gold);
+  color: var(--gold-text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
 
-.info-value a:hover { border-bottom-color: var(--gold); }
+.info-value a:hover { border-bottom-color: var(--gold-text); }
 
 .hours {
   margin-top: 1.6rem;
-  border-top: 1px solid var(--line-dark);
+  border-top: 1px solid var(--line-light);
 }
 
 .hours-row {
@@ -782,20 +795,20 @@ a { color: inherit; }
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 0;
-  border-bottom: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-light);
 }
 
-.hours-day { color: var(--smoke); font-size: 0.95rem; }
+.hours-day { color: var(--ink-soft); font-size: 0.95rem; }
 
 .hours-time {
   font-family: var(--mono);
   font-weight: 500;
   font-size: 0.9rem;
-  color: var(--bone);
+  color: var(--ink);
 }
 
 .hours-time.is-closed {
-  color: var(--smoke);
+  color: var(--ink-soft);
   font-style: italic;
   font-weight: 400;
 }
@@ -850,7 +863,7 @@ a { color: inherit; }
   position: relative;
   padding: clamp(4.5rem, 10vw, 7rem) 0;
   background:
-    linear-gradient(rgba(10, 10, 11, 0.88), rgba(10, 10, 11, 0.88)),
+    linear-gradient(rgba(19, 41, 36, 0.92), rgba(19, 41, 36, 0.92)),
     url("../assets/darbas-1.jpg") center 30% / cover no-repeat;
   color: var(--bone);
   text-align: center;
@@ -895,7 +908,7 @@ a { color: inherit; }
 /* ---------- Footer ---------- */
 
 .footer {
-  background: #060607;
+  background: #0f231f;
   border-top: 1px solid var(--line-dark);
   padding: 2.2rem 0;
 }
@@ -986,7 +999,7 @@ a { color: inherit; }
     justify-content: center;
     gap: 1rem;
     padding: 2rem;
-    background: rgba(10, 10, 11, 0.97);
+    background: rgba(19, 41, 36, 0.97);
     border-left: 1px solid var(--line-dark);
     transform: translateX(100%);
     transition: transform 0.35s ease;
