@@ -3,7 +3,7 @@
    ============================================================ */
 
 // Vienintelė vieta, kur keičiama rezervacijos nuoroda (Setmore)
-const BOOKING_URL = "https://karoliseid.setmore.com/";
+const BOOKING_URL = "https://neformal.setmore.com?utm_source=in-app&utm_medium=iosapp&utm_campaign=settsharebp";
 
 document.querySelectorAll("[data-booking]").forEach(function (a) {
   a.href = BOOKING_URL;
