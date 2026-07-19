@@ -3,7 +3,7 @@
    ============================================================ */
 
 // Vienintelė vieta, kur keičiama rezervacijos nuoroda (Setmore)
-const BOOKING_URL = "https://neformal.setmore.com?utm_source=in-app&utm_medium=iosapp&utm_campaign=settsharebp";
+const BOOKING_URL = "https://neformal.setmore.com/team/cin4aTqrB8w7IPNb9esK1yfqGTWT4y4S";
 
 document.querySelectorAll("[data-booking]").forEach(function (a) {
   a.href = BOOKING_URL;
