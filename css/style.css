@@ -510,6 +510,9 @@ a { color: inherit; }
   object-fit: cover;
 }
 
+/* portretinėms nuotraukoms — iškarpa aukščiau, kad tilptų veidas ir šukuosena */
+.scard-img.is-face { object-position: center 35%; }
+
 .scard-foot {
   display: flex;
   align-items: flex-end;
