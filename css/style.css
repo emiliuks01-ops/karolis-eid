@@ -472,8 +472,14 @@ a { color: inherit; }
   margin-bottom: 1.1rem;
 }
 
-/* trijų stulpelių tinklelyje kortelių nuotraukos lygiuojasi */
+/* Trijų stulpelių tinklelyje antraštės vienodo aukščio, kad nuotraukos,
+   kainos ir kortelių apačios lygiuotųsi. Siauriau nei ~1030px pavadinimas
+   ir aprašymas laužosi į daugiau eilučių, todėl reikia didesnio aukščio. */
 @media (min-width: 901px) {
+  .scard-top { min-height: 7.25rem; }
+}
+
+@media (min-width: 1060px) {
   .scard-top { min-height: 6rem; }
 }
 
